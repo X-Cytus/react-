@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+  <title>1</title>
+  <script src="build/react.js"></script>
+  <script src="build/react-dom.js"></script>
+  <script src="build/browser.min.js"></script>
+</head>
+<style>
+  .content{
+    align-self: center;
+    position: relative;
+  }
+</style>
+<body>
+<h2 align="center">患者基本信息</h2>
+<table class="content" style="width:auto" align="center">
+  <tr id="first">
+  </tr>
+  <tr id="second"></tr>
+  <tr id="third"></tr>
+  <tr>
+    <td ><div id="forth"></div></td>
+  </tr>
+  <tr>
+    <td ><div id="fifth"></div></td>
+  </tr>
+  <tr>
+    <td ><div id="sixth"></div></td>
+  </tr>
+
+</table>
+
+
+<script type="text/babel">
+  var Date  = React.createClass({
+    getInitialState:function () {
+      return {value:'2015.10.11'};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+        clear:'both',
+        width:'auto'
+      }
+      var value=this.state.value;
+      return(
+        <table style={myDivStyle}>
+          <tr><td>建档日期:</td><td><input type="text" value={value} onChange={this.handleChange} /></td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var Num  = React.createClass({
+    getInitialState:function () {
+      return {value:'7576461'};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var value=this.state.value;
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+        clear:'both',
+      }
+      return(
+        <table style={myDivStyle} >
+          <tr><td>登记号:</td><td><input type="text" value={value} onChange={this.handleChange} /></td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var KeShi  = React.createClass({
+    getInitialState:function () {
+      return {value:'妇科肿瘤化疗病房'};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var value=this.state.value;
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+      }
+      return(
+        <table style={myDivStyle}>
+          <tr><td>科室:</td><td><input type="text" value={value} onChange={this.handleChange} /></td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var KaHao  = React.createClass({
+    getInitialState:function () {
+      return {value:'XXXXXXX '};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var value=this.state.value;
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10px',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return(
+        <table style={myDivStyle}>
+          <tr><td>卡号:</td><td><input type="text" value={value} onChange={this.handleChange} /></td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var Name  = React.createClass({
+    getInitialState:function () {
+      return {value:'阿斯蒂芬撒 '};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var value=this.state.value;
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return(
+        <table style={myDivStyle}>
+          <tr><td>姓名:</td><td><input type="text" value={value} onChange={this.handleChange} /></td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var Gender = React.createClass({
+    getInitialState:function () {
+      return {
+        gender:'女'
+      };
+    },
+    handlerGenderChange:function(event){
+      this.setState({
+        gender:event.target.value
+      });
+    },
+    render:function () {
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10px',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return(
+        <table style={myDivStyle}>
+          <tr><td>性别:<input type="radio" name="sex" onChange={this.handlerGenderChange} value={this.state.gender}/>男<input type="radio" name="sex" onChange={this.handlerGenderChange} value={this.state.gender} defaultChecked/>女</td></tr>
+        </table>
+
+      )
+    }
+  });
+  var Birth  = React.createClass({
+    getInitialState:function () {
+      return {value:'1996.1.1 '};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var value=this.state.value;
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return(
+        <table style={myDivStyle}>
+          <tr><td>出生日期:</td><td><input type="text" value={value} onChange={this.handleChange} /></td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var  Old = React.createClass({
+    getInitialState:function () {
+      return {value:'20 '};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var value=this.state.value;
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return(
+        <table style={myDivStyle}>
+          <tr><td>年龄:</td><td><input type="text" value={value} onChange={this.handleChange}style={{width:'30px'}} />&nbsp;岁</td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var Height  = React.createClass({
+    getInitialState:function () {
+      return {value:'150'};
+    },
+    handleChange: function(event) {
+      this.setState({value: event.target.value});
+    },
+    render:function () {
+      var value=this.state.value;
+      var myDivStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return(
+        <table style={myDivStyle}>
+          <tr><td>身高:</td><td><input type="text" value={value} onChange={this.handleChange} style={{width:'30px'}} />cm</td></tr>
+        </table>
+
+      );
+    }
+
+  });
+  var TelNum = React.createClass({
+    getInitialState:function () {
+      return {
+        relationship:'self',
+        phone:null
+      }
+    },
+    handleRelationChange:function (event) {
+      this.setState({relationship:event.target.relationship})
+    },
+    handlePhoneChange:function (event) {
+      this.setState({phone:event.target.phone})
+    },
+    render:function () {
+      var relationship = this.state.relationship;
+      var phone = this.state.phone;
+      var myStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return<form style={myStyle}>
+        <select onChange={this.handleRelationChange} value={this.state.phone}>
+          <option value="self">本人</option>
+          <option value="friend">朋友</option>
+          <option value="family">家人</option>
+        </select>
+        &nbsp;
+        <input onChange={this.handlePhoneChange} value={phone}/>
+      </form>
+    }
+  });
+  var TelNum2 = React.createClass({
+    getInitialState:function () {
+      return {
+        relationship:'self',
+        phone:null
+      }
+    },
+    handleRelationChange:function (event) {
+      this.setState({relationship:event.target.relationship})
+    },
+    handlePhoneChange:function (event) {
+      this.setState({phone:event.target.phone})
+    },
+    render:function () {
+      var relationship = this.state.relationship;
+      var phone = this.state.phone;
+      var myStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return<form style={myStyle}>
+        <select onChange={this.handleRelationChange} value={this.state.phone}>
+          <option value="self">本人</option>
+          <option value="friend">朋友</option>
+          <option value="family">家人</option>
+        </select>
+        &nbsp;
+        <input onChange={this.handlePhoneChange} value={phone}/>
+      </form>
+    }
+  });
+  var LivingPlace = React.createClass({
+    getInitialState:function () {
+      return{
+        province:'sichuan',
+        shi:'chengdu',
+        qu:'jingjiang',
+        place:'XX小区XX号楼'
+      }
+    },
+    handleProvinceChange:function (event) {
+      this.setState({Province:event.target.province})
+    },
+    handleShiChange:function (event) {
+      this.setState({shi:event.target.shi})
+    },
+    handleQuChange:function (event) {
+      this.setState({qu:event.target.qu})
+    },
+    handlePlaceChange:function (event) {
+      this.setState({place:event.target.place})
+    },
+    render:function () {
+      var place=this.state.place;
+      var myStyle={
+        float:'left',
+        paddingTop:'10',
+        paddingRight:'20px',
+        position:'relative',
+
+      };
+      return<form style={myStyle}>
+        <select onChange={this.handleProvinceChange} value={this.state.province} >
+          <option>四川省</option>
+          <option>湖南省</option>
+          <option>云南省</option>
+        </select>
+        <select onChange={this.handleShiChange} value={this.state.shi}>
+          <option>成都市</option>
+          <option>湖南省</option>
+          <option>云南省</option>
+        </select>
+        <select onChange={this.handleQuChange} value={this.state.qu}>
+          <option>成都市</option>
+          <option>湖南省</option>
+          <option>云南省</option>
+        </select>
+        &nbsp;
+        <input type="text" value={place} onChange={this.handlePlaceChange}/>
+
+      </form>
+    }
+
+  });
+
+  ReactDOM.render(<div><Date/><KeShi/></div>,document.getElementById('first'));
+  ReactDOM.render(<div><Num/><KaHao/></div>,document.getElementById('second'));
+  ReactDOM.render(<div><Name/><Gender/></div>,document.getElementById('third'));
+  ReactDOM.render(<div><Birth/><Old/><Height/></div>,document.getElementById('forth'));
+  ReactDOM.render(<div><TelNum/><TelNum2/></div>,document.getElementById('fifth'));
+  ReactDOM.render(<div><LivingPlace/></div>,document.getElementById('sixth'));
+</script>
+</body>
+</html>
